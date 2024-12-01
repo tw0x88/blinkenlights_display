@@ -2,7 +2,6 @@
 Blinkenlights Display.
 
 '''
-
 import pygame
 import os
 
@@ -283,14 +282,14 @@ def zeicheFensterAN(hoehe, weite, offset = 0):
 pause = 1050
 FULLSCREEN = False
 
-if __name__ == "main":
-
+if __name__ == "__main__":
     pygame.init()
 
     if FULLSCREEN == True:
         screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     else:
         screen = pygame.display.set_mode((800, 480))
+
     pygame.display.set_caption("Blinkenlights Display")
     background = pygame.image.load("images/background.png").convert()
     image_fenster_AN = pygame.image.load("images/an.png").convert_alpha()
