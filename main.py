@@ -6,8 +6,6 @@ import pygame
 import os
 import ref as r
 
-beispielAnimation = r.on_off_animation
-
 def zeichneFensterAN(hoehe, weite, offset = 0):
     screen.blit(image_fenster_AN, (weite + offset, hoehe))
 
@@ -608,9 +606,10 @@ def play_animation(animation):
                             weite = 556
                             zeichneFensterAN(hoehe, weite, 3)
 
-
-
-
+        pygame.display.flip()    
+        pygame.time.delay(pause)
+        screen.blit(background, (0, 0))
+        pygame.display.flip()
 
 
 
@@ -641,15 +640,9 @@ if __name__ == "__main__":
                 if event.key == pygame.K_ESCAPE:  # Escape-Taste
                     running = False
 
-        #hintergrund = screen.blit(background, (0, 0))
         pygame.time.delay(800)
 
-        play_animation(beispielAnimation)
-
-        pygame.display.flip()    
-        pygame.time.delay(pause)
-        screen.blit(background, (0, 0))
-        pygame.display.flip()
+        play_animation(r.buchstabenAnimation)
         
     # Beenden
     pygame.quit()
